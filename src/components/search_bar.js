@@ -15,7 +15,6 @@ class SearchBar extends Component {
                   value = {this.state.value}
                   onChange={event => this.onInputChange(event.target.value)}
                />
-             <SearchGrid results={this.props.results} />
             </div>
         );
     }
