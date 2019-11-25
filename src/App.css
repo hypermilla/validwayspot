@@ -29,7 +29,7 @@
 }
 
 .search-bar {
-  margin: 20px auto;
+  margin: auto;
 }
 
 .search-bar input {
@@ -42,17 +42,18 @@
 
 .results {
   margin: 0 auto;
+  margin-top: 40px;
 }
 
 .search-grid {
-  z-index: 10;
-  margin: auto;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
   text-align: left;
-  margin-top: 5px;
   box-shadow: 2px #rgba(255, 0, 0, 0.5);
 }
 
 .search-grid li {
   background-color: #eee;
-
+  z-index: 2;
 }

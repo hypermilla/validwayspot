@@ -5,6 +5,7 @@ import _ from "lodash";
 import SearchBar from './components/search_bar';
 import HomeCover from './components/homecover';
 import Results from './components/results';
+import SearchGrid from './components/search_grid';
 
 const SPREADSHEET_KEY = '1EIW3AYx5mwvOp4YGU-lySjkf0jflhYoFd47kK_ahFtI';
 const { source } = [];
@@ -18,6 +19,7 @@ class App extends React.Component {
     this.state = {
       isLoading: false,
       results: [],
+      selectedResult: null,
       term: '',
       data: []
     };
@@ -50,8 +52,6 @@ class App extends React.Component {
     }
   }
 
-  //handleResultSelect = (event, { result }) => this.setState({ value: result.title });
-
   render () {
     console.log('google sheet data --->', this.state);
     const tagSearch = _.debounce( (term) => { this.tagSearch(term) }, 500);
@@ -60,9 +60,19 @@ class App extends React.Component {
       <div className="App">
         <HomeCover />
         <div className="container">
+
           <h1>Is it a valid Wayspot?</h1>
-          <SearchBar onSearchTermChange={tagSearch} results={this.state.results} />
-          <Results />
+
+          <SearchBar onSearchTermChange={tagSearch} />
+          <SearchGrid
+            results={this.state.results}
+            onResultSelect={selectedResult => this.setState({
+              selectedResult: selectedResult,
+              results: []
+            })}
+          />
+        <Results result={this.state.selectedResult} />
+
         </div>
       </div>
     );
