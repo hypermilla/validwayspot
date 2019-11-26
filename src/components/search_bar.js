@@ -19,6 +19,7 @@ class SearchBar extends Component {
                <input
                   value = {this.state.value}
                   onChange={event => this.onInputChange(event.target.value)}
+                  onFocus={event => this.OnEnterFocus()}
                />
                <SearchGrid 
                     results={this.props.results}
@@ -36,6 +37,10 @@ class SearchBar extends Component {
     onInputChange (value) {
         this.setState({value});
         this.props.onSearchTermChange(value);
+    }
+
+    OnEnterFocus () { 
+        this.setState({value: '' });
     }
 }
 

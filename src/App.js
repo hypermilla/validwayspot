@@ -35,16 +35,17 @@ class App extends React.Component {
     })
   }
 
-  tagSearch (term) {
+  // splitAndTest (tagString, regEx) {
+  //   let separatedTags = tagString.split(',');
+  //   const isMatch = regEx.test(separatedTags); 
+  // }
 
+  tagSearch (term) {
     setTimeout(() => {
       if (term.length > 1)
       {
-        if (!term.charAt(term.length - 1).match(/[a-z]/i))
-        {
-          console.log("ultimo caracter NAO é letra");
+        if (!term.charAt(term.length - 1).match(/[a-z]/i)) {
           term = term.substring(0, term.length-1);
-          console.log(term);
         }
         const termRegExp = new RegExp(_.escapeRegExp(term), 'i');
         this.setState({
@@ -69,7 +70,6 @@ class App extends React.Component {
   }
 
   render () {
-    //console.log('google sheet data --->', this.state);
     const tagSearch = _.debounce( (term) => { this.tagSearch(term) }, 300);
     const handleResult = result => this.handleSearchResult(result);
 
@@ -77,8 +77,7 @@ class App extends React.Component {
       <div className="App">
         <HomeCover />
         <div className="container">
-
-          <h1>Is it a valid Wayspot?</h1>
+          <h1 class="app-title">Is it a valid Wayspot?</h1>
           <SearchBar
             onSearchTermChange={tagSearch} 
             results={this.state.results}
