@@ -52,9 +52,18 @@ class App extends React.Component {
     }
   }
 
+  handleSearchResult = (result) => {
+    this.setState({
+      selectedResult: result,
+      results: []
+    });
+
+  }
+
   render () {
     console.log('google sheet data --->', this.state);
     const tagSearch = _.debounce( (term) => { this.tagSearch(term) }, 500);
+    const handleResult = result => this.handleSearchResult(result);
 
     return (
       <div className="App">
@@ -63,16 +72,14 @@ class App extends React.Component {
 
           <h1>Is it a valid Wayspot?</h1>
 
-          <SearchBar onSearchTermChange={tagSearch} />
-          <SearchGrid
-            results={this.state.results}
-            onResultSelect={selectedResult => this.setState({
-              selectedResult: selectedResult,
-              results: []
-            })}
-          />
-        <Results result={this.state.selectedResult} />
-
+          <div className="search-bar">
+            <SearchBar
+              onSearchTermChange={tagSearch} 
+              results={this.state.results}
+              onResultSelect={handleResult}
+            />
+          </div>
+          <Results result={this.state.selectedResult} />
         </div>
       </div>
     );
