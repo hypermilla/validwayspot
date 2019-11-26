@@ -6,10 +6,15 @@ const SearchGrid = (props) => {
       return null;
   }
 
-  const resultItems = props.results.map((result) => {
+  const resultItems = props.results.map((result, i) => {
     return (
-      <li className="list-group-item">
-        <button type="button" onClick={() => props.onResultSelect(result)} className="btn btn-outline-info">
+      <li
+        key={i}
+        id={i}
+        className={props.cursor === i ? 'list-group-item active' : 'list-group-item'}
+        onClick={() => props.onResultSelect(result)}
+      >
+        <button type="button" className="btn btn-outline-info">
           {result.tag}
         </button>
       </li>
