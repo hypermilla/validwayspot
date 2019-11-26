@@ -71,14 +71,11 @@ class App extends React.Component {
         <div className="container">
 
           <h1>Is it a valid Wayspot?</h1>
-
-          <div className="search-bar">
-            <SearchBar
-              onSearchTermChange={tagSearch} 
-              results={this.state.results}
-              onResultSelect={handleResult}
-            />
-          </div>
+          <SearchBar
+            onSearchTermChange={tagSearch} 
+            results={this.state.results}
+            onResultSelect={handleResult}
+          />
           <Results result={this.state.selectedResult} />
         </div>
       </div>
