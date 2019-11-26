@@ -21,11 +21,19 @@
   color: #09d3ac;
 }
 
+.app-title { 
+  font-weight: 700;
+  color: #282c34;
+  font-size: 3em;
+  padding-bottom: 20px;
+}
+
 .home-cover {
   width: 100%;
-  height: 240px;
-  background-color: green;
+  height: 300px;
   margin-bottom: 40px;
+  background: url('images/hero.jpg');
+  background-size: cover;
 }
 
 .search-bar {
@@ -33,6 +41,7 @@
   width: 100%;
   position: relative;
   z-index: 1;
+  margin-top: 20px;
 }
 
 .search-bar input {
@@ -70,5 +79,19 @@
   margin-top: 40px;
   position: relative;
   z-index: 0;
+}
+
+.results-title {
+  padding-bottom: 10px;
+  color: #333333;
+}
+
+.results-title span {
+  color: blueviolet;
+}
+
+.results-source {
+  text-align: left;
+  margin-bottom: 80px;
 }
 
