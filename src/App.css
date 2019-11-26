@@ -30,6 +30,9 @@
 
 .search-bar {
   margin: auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .search-bar input {
@@ -40,20 +43,32 @@
   width: 100%;
 }
 
-.results {
-  margin: 0 auto;
-  margin-top: 40px;
-}
-
 .search-grid {
-  z-index: 1;
-  position: fixed;
   width: 100%;
   text-align: left;
-  box-shadow: 2px #rgba(255, 0, 0, 0.5);
+}
+
+.search-grid ul {
+  display: block;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+    -webkit-box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.25);
+  box-shadow: 2px 5px 5px 0px rgba(0,0,0,0.05);
 }
 
 .search-grid li {
   background-color: #eee;
+  position: relative;
+  width: inherit;
   z-index: 2;
 }
+
+.results {
+  margin: 0 auto;
+  margin-top: 40px;
+  position: relative;
+  z-index: 0;
+}
+

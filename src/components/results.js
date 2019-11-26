@@ -18,6 +18,7 @@ class Results extends Component {
 
     return(
       <div className="results">
+        <h3>{this.props.result.tag}</h3>
         <div className="verdict">
           <div className="alert alert-success" role="alert">
             <h3 className="verdict-valid">{this.props.result.isValid}</h3>

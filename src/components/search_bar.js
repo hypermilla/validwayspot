@@ -6,17 +6,32 @@ class SearchBar extends Component {
     constructor(props) {
         super(props);
         this.state = { value: ''};
+
+        if (this.props.selectedTag != '') {
+            this.setState({ value: this.props.selectedTag });
+        }
     }
 
+
     render() {
+
         return (
-            <div className="search-bar">
+            <div>
                <input
                   value = {this.state.value}
                   onChange={event => this.onInputChange(event.target.value)}
                />
+               <SearchGrid 
+                    results={this.props.results}
+                    onResultSelect={result => this.onResultSelect(result)}
+               />
             </div>
         );
+    }
+
+    onResultSelect (result) {
+        this.props.onResultSelect(result);
+        this.setState({ value: result.tag });
     }
 
     onInputChange (value) {
