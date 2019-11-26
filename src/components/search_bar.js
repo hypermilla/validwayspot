@@ -7,7 +7,7 @@ class SearchBar extends Component {
         super(props);
         this.state = { value: ''};
 
-        if (this.props.selectedTag != '') {
+        if (this.props.selectedTag !== '') {
             this.setState({ value: this.props.selectedTag });
         }
     }

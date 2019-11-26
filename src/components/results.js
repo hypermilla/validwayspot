@@ -11,7 +11,7 @@ class Results extends Component {
 
   render () {
 
-    console.log(this.props.result);
+    //console.log(this.props.result);
     if (this.props.result == null){
       return null;
     }

@@ -36,20 +36,28 @@ class App extends React.Component {
   }
 
   tagSearch (term) {
-    if (term.length > 0)
-    {
-      const termRegExp = new RegExp(_.escapeRegExp(term));
-      const isMatch = (data) => termRegExp.test(data.tag);
-      this.setState({
-        results: _.filter(this.state.data, function(data) { return termRegExp.test(data.tag) })
-      });
-    }
 
-    else {
-      this.setState({
-        results: []
-      });
-    }
+    setTimeout(() => {
+      if (term.length > 1)
+      {
+        if (!term.charAt(term.length - 1).match(/[a-z]/i))
+        {
+          console.log("ultimo caracter NAO é letra");
+          term = term.substring(0, term.length-1);
+          console.log(term);
+        }
+        const termRegExp = new RegExp(_.escapeRegExp(term), 'i');
+        this.setState({
+          results: _.filter(this.state.data, function (data) { return termRegExp.test(data.tag) })
+        });
+      }
+
+      else {
+        this.setState({
+          results: []
+        });
+      }
+    }, 100);
   }
 
   handleSearchResult = (result) => {
@@ -61,8 +69,8 @@ class App extends React.Component {
   }
 
   render () {
-    console.log('google sheet data --->', this.state);
-    const tagSearch = _.debounce( (term) => { this.tagSearch(term) }, 500);
+    //console.log('google sheet data --->', this.state);
+    const tagSearch = _.debounce( (term) => { this.tagSearch(term) }, 300);
     const handleResult = result => this.handleSearchResult(result);
 
     return (
