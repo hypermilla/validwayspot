@@ -76,6 +76,15 @@
   position: relative;
   width: inherit;
   z-index: 2;
+  cursor: pointer;
+}
+
+.search-grid li:hover {
+  background-color: #09d3ac;
+}
+
+.search-grid li.active {
+  background-color: #09d3ac;
 }
 
 .results {

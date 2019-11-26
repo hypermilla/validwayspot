@@ -2,15 +2,12 @@ import React from 'react';
 import './App.css';
 import Tabletop from 'tabletop';
 import _ from "lodash";
+
 import SearchBar from './components/search_bar';
 import HomeCover from './components/homecover';
 import Results from './components/results';
-import SearchGrid from './components/search_grid';
 
 const SPREADSHEET_KEY = '1EIW3AYx5mwvOp4YGU-lySjkf0jflhYoFd47kK_ahFtI';
-const { source } = [];
-const initialState = { isLoading: false, results: [], term: '' };
-
 
 class App extends React.Component {
   constructor (props) {
@@ -77,7 +74,7 @@ class App extends React.Component {
       <div className="App">
         <HomeCover />
         <div className="container">
-          <h1 class="app-title">Is it a valid Wayspot?</h1>
+          <h1 className="app-title">Is it a valid Wayspot?</h1>
           <SearchBar
             onSearchTermChange={tagSearch} 
             results={this.state.results}
