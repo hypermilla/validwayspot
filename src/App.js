@@ -17,6 +17,7 @@ class App extends React.Component {
       isLoading: false,
       results: [],
       selectedResult: null,
+      selectedTag: null, 
       term: '',
       resultsTags: [],
       data: []
@@ -92,10 +93,14 @@ class App extends React.Component {
     }, 100);
   }
 
-  handleSearchResult = (result) => {
+  handleSearchResult = (i) => {
+    const selectedResult = this.state.results[i];
+    const selectedTag = this.state.resultsTags[i];
     this.setState({
-      selectedResult: result,
-      results: []
+      selectedResult: selectedResult,
+      selectedTag: selectedTag,
+      results: [],
+      resultsTags: []
     });
 
   }
@@ -111,10 +116,14 @@ class App extends React.Component {
           <h1 className="app-title">Is it a valid Wayspot?</h1>
           <SearchBar
             onSearchTermChange={tagSearch} 
-            results={this.state.resultsTags}
+            resultsTags={this.state.resultsTags}
+            results={this.state.results}
             onResultSelect={handleResult}
           />
-          <Results result={this.state.selectedResult} />
+          <Results 
+            tag={this.state.selectedTag} 
+            result={this.state.selectedResult} 
+          />
         </div>
       </div>
     );
