@@ -298,6 +298,10 @@ a {
   border-color:   #773271;
 }
 
+.search-grid button {
+  margin-right: 10px;
+}
+
 .results {
   margin: 0 auto;
   margin-top: 40px;
@@ -449,4 +453,26 @@ a {
     width: 100%;
   }
 }
+
+.verdict {
+  margin: 20px 0px;
+  padding: 0;
+  padding-bottom: 20px;
+}
+
+.verdict .card-title, .verdict .card-text {
+  padding: 0px 10px;
+}
+
+.verdict.card-header {
+  width: 100%;
+}
+
+.verdict-text {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+
+
 
