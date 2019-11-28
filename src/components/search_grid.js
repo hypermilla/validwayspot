@@ -12,11 +12,9 @@ const SearchGrid = (props) => {
         key={i}
         id={i}
         className={props.cursor === i ? 'list-group-item active' : 'list-group-item'}
-        onClick={() => props.onResultSelect(result)}
+        onClick={() => props.onResultSelect(result)} 
       >
-        <button type="button" className="btn btn-outline-info">
-          {result.tag}
-        </button>
+          {result}
       </li>
     );
   });
