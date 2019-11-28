@@ -85,7 +85,8 @@ class App extends React.Component {
 
       else {
         this.setState({
-          results: []
+          results: [],
+          resultsTags: []
         });
       }
     }, 100);
