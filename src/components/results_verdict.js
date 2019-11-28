@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 
-const ResultsVerdict = (props) => {
-  return(
-    <div className={props.alertClass} role="alert">
-      <h3 className="verdict-title">{props.verdictTitle}</h3>
-      <span className="verdict-description">{props.verdictDescription}</span>
+const Verdict = (props) => {
+  return (
+    <div className="verdict card">
+      <h6 className="card-header">Is it valid?</h6>
+      <h2 className="verdict-text card-title">{props.verdictText}</h2>
+      <p className="card-text">{props.subjectiveSummary}</p>
     </div>
   );
 }
 
-export default ResultsVerdict;
+export default Verdict;

@@ -87,6 +87,10 @@
   background-color: #95b8b1;
 }
 
+.search-grid button {
+  margin-right: 10px;
+}
+
 .results {
   margin: 0 auto;
   margin-top: 40px;
@@ -107,4 +111,26 @@
   text-align: left;
   margin-bottom: 80px;
 }
+
+.verdict {
+  margin: 20px 0px;
+  padding: 0;
+  padding-bottom: 20px;
+}
+
+.verdict .card-title, .verdict .card-text {
+  padding: 0px 10px;
+}
+
+.verdict.card-header {
+  width: 100%;
+}
+
+.verdict-text {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+
+
 

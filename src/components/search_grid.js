@@ -1,31 +1,48 @@
 import React from 'react';
 
-const SearchGrid = (props) => {
+class SearchGrid extends React.Component {
 
-  if (props.results == null) {
-      return null;
+  constructor (props) {
+    super (props);
   }
 
-  const resultItems = props.results.map((result, i) => {
-    return (
+
+  render () {
+    if (this.props.results == null) {
+      return null;
+    }
+
+    const resultsTags = this.props.resultsTags;
+    const results = this.props.results;
+
+    const resultsList = resultsTags.map((result, i) =>
       <li
         key={i}
         id={i}
-        className={props.cursor === i ? 'list-group-item active' : 'list-group-item'}
-        onClick={() => props.onResultSelect(result)} 
+        className={
+          this.props.cursor === i
+            ? "list-group-item active"
+            : "list-group-item"
+        }
+        onClick={() => this.props.onResultSelect(result, i)}
       >
-          {result}
+        {resultsTags[i].map((tag, j) =>
+          <button type="button" className="btn btn-outline-info">
+            {tag}
+          </button>
+        )}
       </li>
     );
-  });
 
-  return (
-    <div className="search-grid">
-      <ul className="list-group">
-        { resultItems }
-      </ul>
-    </div>
-  );
+    return (
+      <div className="search-grid">
+        <ul className="list-group">
+          {resultsList}
+        </ul>
+      </div>
+    );
+
+  }
 }
 
 export default SearchGrid;

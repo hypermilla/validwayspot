@@ -44,28 +44,29 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div className="search-bar">
+          <div className="search-bar">
             <input
-                value={this.state.value}
-                onChange={event => this.onInputChange(event.target.value)}
-                onFocus={event => this.OnEnterFocus()}
-                onKeyDown={this.handleKeyDown}
+              value={this.state.value}
+              onChange={event => this.onInputChange(event.target.value)}
+              onFocus={event => this.OnEnterFocus()}
+              onKeyDown={this.handleKeyDown}
             />
             <SearchGrid
-                results={this.props.results}
-                onResultSelect={result => this.onResultSelect(result)}
-                cursor={this.state.cursor}
+              results={this.props.results}
+              resultsTags={this.props.resultsTags}
+              onResultSelect={(result, i) => this.onResultSelect(result, i)}
+              cursor={this.state.cursor}
             />
-            </div>
+          </div>
         );
     }
 
-    onResultSelect (result) {
-        if (!result) {
+    onResultSelect (tag, i) {
+        if (!tag) {
             return null;
         }
-        this.props.onResultSelect(result);
-        this.setState({ value: result.tag });
+        this.props.onResultSelect(i);
+        this.setState({ value: tag });
     }
 
     onInputChange (value) {
