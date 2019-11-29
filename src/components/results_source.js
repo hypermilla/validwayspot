@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
 const ResultsSource = (props) => {
+
+  const sourceQuestion =
+    <h5 className="question">
+      {props.question}
+    </h5>;
+
   return (
     <div className="results-source card rounded-0">
         <h3 className="source-name">
@@ -9,9 +15,7 @@ const ResultsSource = (props) => {
           <span style={{}}>{props.date.length > 0 ? ', on ' + props.date : null}</span>
         </h3>
         <div className="">
-          <h5 className="question">
-            {props.answer.length > 0 ? props.question : null}
-          </h5>
+          {props.answer.length > 0 ? sourceQuestion : null}
           <p className="answer">
             {props.answer.length == 0 ? props.question : props.answer}
           </p>
