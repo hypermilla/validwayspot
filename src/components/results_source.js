@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const ResultsSource = (props) => {
   return (
-    <div className="results-source">
+    <div className="results-source card rounded-0">
         <h3 className="source-name">
           <span style={{ fontWeight: "bold" }}>Source: </span>
           {props.source}
