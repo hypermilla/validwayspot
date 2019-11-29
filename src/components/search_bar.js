@@ -41,8 +41,11 @@ class SearchBar extends Component {
             this.setState( prevState => ({ cursor: prevState.cursor + 1 }));
         }
         else if (event.keyCode === 13) {
-            this.onResultSelect(this.props.results[cursor]);
-            this.setState({ cursor: 0 });
+            this.props.onResultSelect(cursor);
+            this.setState({ 
+                cursor: -1,
+                value: this.props.resultsTags[cursor]
+            });
         }
     }
 
@@ -68,7 +71,6 @@ class SearchBar extends Component {
     }
 
     onResultSelect (tag, i) {
-        console.log("Selected result");
         if (!tag) {
             return null;
         }
