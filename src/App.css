@@ -123,6 +123,7 @@ a {
 
 .search-grid li {
   position: relative;
+  background-color: rgb(72, 72, 72);
   width: inherit;
   z-index: 2;
   cursor: pointer;
