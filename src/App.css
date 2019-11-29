@@ -64,14 +64,6 @@ a {
   margin-right: 20px;
 }
 
-@media (max-width: 600px) 
-{
-  .top-credits {
-    text-align: center; 
-    margin-right: 0px;
-  }
-}
-
 .top-credits a {
   color: #fff;
   font-weight: 600;
@@ -299,6 +291,10 @@ a {
   line-height: 1.6;
 }
 
+.results-souce .answer {
+  
+}
+
 .results-source p { 
   font-size: 1.2rem;
   font-weight: 300;
@@ -319,5 +315,22 @@ a {
   color: #fff;
 }
 
+@media (max-width: 600px) 
+{
+  .app-title {
+    font-size: 2.5rem;
+  }
 
+  .search-bar input {
+    font-size: 1.5rem;
+  }
+
+  .top-credits {
+    text-align: center; 
+    margin-right: 0px;
+  }
+  .container {
+    width: 100%;
+  }
+}
 
