@@ -3,20 +3,19 @@ import React, { Component } from 'react';
 const ResultsSource = (props) => {
   return (
     <div className="results-source">
-      <div class="card">
-        <div class="card-header">
+        <h3 className="source-name">
           <span style={{ fontWeight: "bold" }}>Source: </span>
           {props.source}
-          <span style={{}}>, on {props.date}</span>
+          <span style={{}}>{props.date.length > 0 ? ', on ' + props.date : null}</span>
+        </h3>
+        <div className="">
+          <h5 className="question">
+            {props.answer.length > 0 ? props.question : null}
+          </h5>
+          <p className="answer">
+            {props.answer.length == 0 ? props.question : props.answer}
+          </p>
         </div>
-        <div class="card-body">
-          <h6 class="card-title">{props.question}</h6>
-          <p class="card-text">{props.answer}</p>
-          <a href="#" class="btn btn-primary">
-            Link
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

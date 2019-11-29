@@ -12,15 +12,15 @@ class Results extends Component {
   getVerdictAlertClass (verdict) {
       switch (verdict) {
         case "YES":
-          return "alert alert-success";
+          return "verdict-valid";
         case "YESIF":
-          return "alert alert-warning";
+          return "verdict-maybe";
         case "MAYBE":
-          return "alert alert-warning";
+          return "verdict-maybe";
         case "NOBUT":
-          return "alert alert-warning";
+          return "verdict-maybe";
         case "NO":
-          return "alert alert-danger";
+          return "verdict-invalid";
         default:
           return null;
       }
@@ -61,12 +61,9 @@ class Results extends Component {
     }
 
     return (
-      <div className="results jumbotron">
-        <span>Tag: </span>
-        <h3 className="">
-          {this.props.tag} 
-        </h3>
-        <p className="lead">Related tags: {this.props.result.tag}</p>
+      <div className="results">
+        <h3 className="">Wayspot Criteria:</h3>
+        <p className="tags">{this.props.result.tag}</p>
 
         <Verdict
           className={this.getVerdictAlertClass(this.props.result.isValid)}

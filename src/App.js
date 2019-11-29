@@ -37,16 +37,10 @@ class App extends React.Component {
   splitTags (searchResults) {
 
     let arrayOfTags = new Array();
-    console.log("Results input:");
-    console.log(searchResults);
     for (let i = 0; i < searchResults.length; i++ ) {
       let separatedTags = searchResults[i].tag.split(", ");
       arrayOfTags.push(separatedTags); 
-      console.log("Tags separated in iteration: "+ i );
-      console.log(separatedTags);
     }
-    console.log("Final array of tags:");
-    console.log(arrayOfTags);
     return arrayOfTags; 
   }
 
@@ -75,15 +69,12 @@ class App extends React.Component {
           }
           resultsTags.push(filteredTags);
         }
-        console.log("Filtered Tags: ");
-        console.log(resultsTags);
 
         this.setState({
           results: filteredResults,
           resultsTags: resultsTags
         });
       }
-
       else {
         this.setState({
           results: [],
@@ -106,11 +97,11 @@ class App extends React.Component {
   }
 
   render () {
-    const tagSearch = _.debounce( (term) => { this.tagSearch(term) }, 300);
+    const tagSearch = _.debounce( (term) => { this.tagSearch(term) }, 100);
     const handleResult = result => this.handleSearchResult(result);
 
     return (
-      <div className="App">
+      <div className="main">
         <HomeCover />
         <div className="container">
           <h1 className="app-title">Is it a valid Wayspot?</h1>

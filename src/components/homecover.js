@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class HomeCover extends Component {
     render() {
 
-        const logo = require("../images/wayfarer-index.png");
+        const logo = require("../images/wayfarer-index-logo.png");
 
         return (
           <div className="home-cover">
