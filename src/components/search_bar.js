@@ -9,7 +9,8 @@ class SearchBar extends Component {
         this.state = { 
             value: 'Search for a tag. Ex: school, pool, bus stop...',
             focus: null,
-            cursor: 0
+            cursor: -1,
+            isResultsActive: ''
         };
 
         this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -17,6 +18,9 @@ class SearchBar extends Component {
         if (this.props.selectedTag !== '') {
             this.setState({ value: this.props.selectedTag });
         }
+        else {
+            this.setState({isResultsActive: '' });
+        } 
     }
 
     handleKeyDown (event) { 
@@ -26,7 +30,7 @@ class SearchBar extends Component {
             return null;
         }
 
-        else if (event.keyCode === 38 && cursor > 0) {
+        else if (event.keyCode === 38 && cursor >= 0) {
             console.log("Pressed key up");
             console.log(cursor);
             this.setState( prevState => ({ cursor: prevState.cursor - 1 }));
@@ -50,8 +54,10 @@ class SearchBar extends Component {
               onChange={event => this.onInputChange(event.target.value)}
               onFocus={event => this.OnEnterFocus()}
               onKeyDown={this.handleKeyDown}
+              onBlur={event => this.OnLeaveFocus()}
             />
             <SearchGrid
+              isActive={this.state.isResultsActive}
               results={this.props.results}
               resultsTags={this.props.resultsTags}
               onResultSelect={(result, i) => this.onResultSelect(result, i)}
@@ -62,6 +68,7 @@ class SearchBar extends Component {
     }
 
     onResultSelect (tag, i) {
+        console.log("Selected result");
         if (!tag) {
             return null;
         }
@@ -70,14 +77,24 @@ class SearchBar extends Component {
     }
 
     onInputChange (value) {
-        this.setState({value});
+        this.setState({
+            value,
+            isResultsActive: ""
+        });
         this.props.onSearchTermChange(value);
     }
 
     OnEnterFocus () { 
         this.setState({
-            value: '',
-            focus: 0
+          value: "",
+          cursor: -1,
+          isResultsActive: "inactive"
+        });
+    }
+
+    OnLeaveFocus() {
+        this.setState({
+            isResultsActive: "inactive"
         });
     }
 }
