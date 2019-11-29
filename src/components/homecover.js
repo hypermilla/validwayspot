@@ -10,6 +10,16 @@ class HomeCover extends Component {
             <div className="app-logo">
               <img src={logo} />
             </div>
+            <div className="top-credits">
+              by{" "}
+              <a href="https://twitter.com/hypermilla" target="_blank">
+                @hypermilla
+              </a>{" "}
+              and{" "}
+              <a href="https://twitter.com/elamhut" target="_blank">
+                @elamhut
+              </a>
+            </div>
           </div>
         );
     }

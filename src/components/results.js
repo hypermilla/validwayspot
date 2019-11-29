@@ -43,18 +43,6 @@ class Results extends Component {
     }
   }
 
-  getTagNames = () => {
-    const tags = this.props.tag;
-    let tagNames = {};
-    for (let i = 0; i < tags.length; i++) {
-      if (i == tags.length) {
-        tagNames += tags[i];
-        return tagNames;
-      }
-      tagNames += tags[i] + ", ";
-    }
-  }
-
   render () {
     if (this.props.result == null){
       return null;
@@ -62,8 +50,11 @@ class Results extends Component {
 
     return (
       <div className="results">
-        <h3 className="">Wayspot Criteria:</h3>
-        <p className="tags">{this.props.result.tag}</p>
+
+        <div className="results-title card">
+          <label className="results-label">Wayspot Criteria:</label>
+          <p className="tags">{this.props.result.tag}</p>
+        </div>
 
         <Verdict
           className={this.getVerdictAlertClass(this.props.result.isValid)}
@@ -78,6 +69,7 @@ class Results extends Component {
           question={this.props.result.question}
           answer={this.props.result.answer}
         />
+
       </div>
     );
   }
