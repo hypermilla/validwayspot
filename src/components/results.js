@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Verdict from './results_verdict'; 
 import Source from './results_source';
-import { thisExpression } from '@babel/types';
 
 class Results extends Component {
 
