@@ -2,9 +2,6 @@ import React from "react";
 import Tabletop from "tabletop";
 import _ from "lodash";
 
-import SearchController from "./searchController";
-import TabletopLoader from "./tabletopLoader"; 
-
 import SearchBar from "./search_bar";
 import Results from "./results";
 

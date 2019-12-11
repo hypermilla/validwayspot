@@ -26,7 +26,6 @@ class App extends React.Component {
               <Route path="/:tag" component={ResultsPage} />
             </Switch>
           </div>
-          <Footer />
         </Router>
       </div>
     );
