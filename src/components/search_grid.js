@@ -5,8 +5,7 @@ class SearchGrid extends React.Component {
   constructor (props) {
     super (props);
   }
-
-
+  
   render () {
     if (this.props.results.length == 0) {
       return null;

@@ -7,7 +7,7 @@ import _ from "lodash";
 import HomeCover from "./components/homecover";
 import HomePage from "./components/homepage";
 import ResultsPage from "./components/resultspage"; 
-import Footer from "./components/footer";
+import HomeFooter from "./components/homefooter";
 
 class App extends React.Component {
   constructor(props) {
@@ -26,6 +26,7 @@ class App extends React.Component {
               <Route path="/:tag" component={ResultsPage} />
             </Switch>
           </div>
+          <HomeFooter />
         </Router>
       </div>
     );
