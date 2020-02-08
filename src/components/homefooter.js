@@ -6,6 +6,26 @@ const HomeFooter = (props) => {
 			<p>Wayfarer Index is a free project made to help the Niantic Wayfarer community.</p>
 			<p>Made with ♥ and ReactJS.</p>
 			<div className="row">
+				<div className="col links">
+					<h3>Pokéstop Submission Guides</h3>
+					<ul className="">
+						<li>
+							<a href="https://adgd.me/The-Definitive-guide-on-how-to-submit-the-perfect-Pokestop" target="_blank">
+								Submitting the perfect Pokestop/Portal
+							</a>
+						</li>
+						<li>
+							<a href="https://adgd.me/The-Definitive-guide-on-how-to-submit-the-perfect-Pokestop-part-2-street-view" target="_blank">
+								How to improve your chances with a Photosphere
+							</a>
+						</li>
+						<li>
+							<a href="https://adgd.me/The-Definitive-guide-on-how-to-submit-the-perfect-Pokestop-part-3-s2-cells-iitc" target="_blank">
+								Understanding and using S2 Cells during submission
+							</a>
+						</li>
+					</ul>
+				</div>
 				<div className="col donation">
 					<div className="kofi">
 						<a href='https://ko-fi.com/P5P5196AB' target='_blank'>
@@ -19,18 +39,6 @@ const HomeFooter = (props) => {
 						<p><b>BTC:</b> <a href="#">1FiXbrMAQ6RAyCEV43QJzs5HfuZhTyZBbk</a></p>
 					</div>
 				</div>
-				{/* <div className="col links">
-					<h3>Niantic Wayfarer Guides</h3>
-					<ul className="">
-						<li>
-							<a href="" target="_blank">
-								Coming soon!
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div className="col">
-				</div> */}
 			</div>
 		</div>
 	);
