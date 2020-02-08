@@ -51,6 +51,10 @@ body {
   text-align: center;
 }
 
+.footer .col {
+  padding: 40px; 
+}
+
 .footer .col div {
   text-align: left;
 }
@@ -64,24 +68,32 @@ body {
   text-align: left;
   list-style: none;
   text-decoration: none;
+  padding-bottom: 10px;
+  line-height: 100%;
 }
+.footer .links li a :visited {
+  color: #317771;
+  text-decoration: none;
+}
+
 .footer .links ul {
   margin: 0;
   padding: 0;
 }
 
 .footer .links a {
-  text-decoration: underline;
-  color: #09d3ac;
+  /* text-decoration: underline; */
+  color: #d5cbd9;
   font-size: 16px;
 }
 
 .footer  a :visited {
-  color: #09d3ac;
+  color: #d5cbd9;
 }
 
-.footer a :hover {
-  color: #d5cbd9;
+.footer a:hover {
+  color:  #09d3ac;
+  text-decoration: underline;
 }
 
 .footer .donation {
@@ -122,9 +134,7 @@ body {
   font-size: 14px;
   background-color: #425460;
   border-radius: 10px;
-
   margin: 20px auto;
-
 }
 
 .donate-crypto h3 {
@@ -138,7 +148,7 @@ body {
 }
 
 .donate-crypto a {
-  color: #d5cbd9;
+  color: #a35cc1;
   text-decoration: none;
 }
 
@@ -180,7 +190,7 @@ body {
 }
 
 a {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .top-credits {
