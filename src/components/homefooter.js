@@ -4,6 +4,7 @@ const HomeFooter = (props) => {
 	return (
 		<div className="footer">
 			<p>Wayfarer Index is a free project made to help the Niantic Wayfarer community.</p>
+			<p>The information here is based on the <a href="https://docs.google.com/spreadsheets/d/1rTfW8UJQ24ynoNLm0vHmOFUF5QNqVQieCvVvhj5ItRU/edit#gid=2106370663" target="_blank">Community Criteria Sheet</a>.</p>
 			<p>Made with ♥ and ReactJS.</p>
 			<div className="row">
 				<div className="col links">
