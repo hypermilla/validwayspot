@@ -3,7 +3,7 @@
 A simple app created for the Pokémon Go Community, to help provide information on creating new valid Wayspots using the Niantic Wayfarer system.  Niantic has provided a lot of information throughout the years, but the information was scattered. The community then started compiling the information together on google spreadsheets. This project takes all this information gathered by the community, filters them in a way that can be used in a web app, and provides a page with search functionality to facilitaty finding relevant information. 
 
 ## How it Works
-Wayfarer Index was created with [Create React App] (https://github.com/facebook/create-react-app), and uses [Tabletop.js](https://github.com/jsoma/tabletop) to read the open Google spreadsheet and use it as an easy backend.
+Wayfarer Index was created with [Create React App](https://github.com/facebook/create-react-app), and uses [Tabletop.js](https://github.com/jsoma/tabletop) to read the open Google spreadsheet and use it as an easy backend.
 
 This was a project created to learn ReactJS and, at the same time, try to provide something useful to the Pokémon community.
 
